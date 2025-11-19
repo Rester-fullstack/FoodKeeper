@@ -64,17 +64,6 @@ Navbar fixa e intuitiva
 
 Botões e interações com hover e feedback visual
 
-🧩 Como Contribuir
-Fork o repositório
 
-Crie uma branch: git checkout -b feature/nova-funcionalidade
-
-Faça commits: git commit -m "Descrição da mudança"
-
-Envie para o repositório remoto: git push origin feature/nova-funcionalidade
-
-Abra um Pull Request
-
-📄 Licença
 MIT License © 2025
 
