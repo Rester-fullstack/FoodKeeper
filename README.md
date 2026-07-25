@@ -1,102 +1,269 @@
-# 🍽️ FoodKeeper — Sistema de Gerenciamento de Produtos Alimentícios
+# 🍽️ FoodKeeper
 
-O **FoodKeeper** é um sistema completo desenvolvido para controlar produtos alimentícios, permitindo gerenciar **categorias**, **produtos**, **estoque**, **validade** e acompanhar alertas importantes como produtos prestes a vencer ou com quantidade baixa.
+Sistema Full Stack para gerenciamento de produtos alimentícios, desenvolvido com **ASP.NET Core Web API**, **React** e **SQL Server**.
 
-Este projeto foi construído como uma aplicação **Full Stack** com **.NET 8** no backend e **React 18** no frontend.
-
----
-
-## 🚀 Tecnologias Utilizadas
-
-### 🔧 **Backend — FoodKeeper.Api (.NET 8)**
-- 🟣 **ASP.NET Core 8**
-- 🟢 **Entity Framework Core**
-- 🟡 **SQL Server**
-- 🔑 **JWT Authentication** *(se habilitado)*
-- 📄 **Swagger / OpenAPI** para documentação da API
-
-### 🎨 **Frontend — foodkeeper-web (React + Vite)**
-- ⚛️ **React 18**
-- ⚡ **Vite**
-- 💨 **Tailwind CSS**
-- 🎨 **Bootstrap 5**
-- 🔗 **Axios** para consumo da API
-- 🔔 **React Toastify** para notificações
+O FoodKeeper permite controlar produtos, categorias, estoque e datas de validade, oferecendo uma interface moderna para gerenciamento de alimentos e acompanhamento de itens próximos ao vencimento ou com estoque reduzido.
 
 ---
 
-## 📦 Funcionalidades Principais
+## 🚀 Funcionalidades
 
-### 🛒 **Gestão de Produtos**
-- Cadastro, edição e remoção de produtos  
-- Listagem de produtos com busca e filtros  
-- Organização por categorias  
+### 📦 Gestão de Produtos
 
-### ⏳ **Validades**
-- Produtos próximos do vencimento  
-- Lista de produtos vencidos  
-- Alerta visual + notificações no frontend  
+- Cadastro de produtos
+- Edição de produtos
+- Exclusão de produtos
+- Listagem de produtos
+- Busca por nome
+- Organização por categorias
 
-### 📉 **Estoque**
-- Produtos com estoque baixo  
-- Indicadores visuais para níveis críticos  
-- Atualização de quantidade  
+### 🏷️ Categorias
 
-### 💬 **Interface Moderna**
-- Layout responsivo (mobile-first)  
-- Navbar fixa e intuitiva  
-- Cards estilizados  
-- Feedback visual com hover e alertas  
+- Cadastro de categorias
+- Associação de produtos às categorias
+
+### 📉 Controle de Estoque
+
+- Atualização de quantidade
+- Produtos com estoque baixo
+- Indicadores visuais
+
+### ⏳ Controle de Validade
+
+- Produtos próximos do vencimento
+- Produtos vencidos
+- Alertas visuais
+
+### 🎨 Interface
+
+- Layout responsivo
+- Navegação intuitiva
+- Feedback visual
+- Notificações
 
 ---
 
-## 🗂 Estrutura do Projeto
+# 🛠️ Tecnologias Utilizadas
 
-FoodKeeper/
+## Backend
+
+- C#
+- ASP.NET Core 8 Web API
+- Entity Framework Core
+- SQL Server
+- Swagger / OpenAPI
+
+## Frontend
+
+- React 18
+- Vite
+- Tailwind CSS
+- Bootstrap 5
+- Axios
+- React Toastify
+
+---
+
+# 🏗️ Arquitetura
+
+```text
+React + Vite
+      │
+      ▼
+Axios
+      │
+      ▼
+ASP.NET Core Web API
+      │
+      ▼
+Entity Framework Core
+      │
+      ▼
+SQL Server
+```
+
+---
+
+# 📂 Estrutura do Projeto
+
+```text
+FoodKeeper
 │
-├── README.md
+├── FoodKeeper.Api
+│   ├── Controllers
+│   ├── Data
+│   ├── DTOs
+│   ├── Models
+│   ├── Program.cs
+│   └── appsettings.json
 │
-├── FoodKeeper.Api/ # Backend (.NET 8)
-│ ├── Controllers/
-│ ├── Data/
-│ ├── Dtos/
-│ ├── Models/
-│ └── Program.cs
+├── foodkeeper-web
+│   ├── src
+│   │   ├── assets
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── services
+│   │   └── App.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
 │
-└── foodkeeper-web/ # Frontend (React + Vite)
-├── src/
-│ ├── components/ # Navbar, CategoriaCard, ProdutoCard
-│ ├── pages/ # Home, Produtos, Vencidos, EstoqueBaixo
-│ └── services/ # API Requests
-└── package.json
+└── README.md
+```
 
 ---
 
-## ▶️ Como Executar o Projeto
+# ▶️ Como executar
 
-### **1. Backend (.NET 8)**
+## Clone o repositório
 
+```bash
+git clone https://github.com/Rester-fullstack/FoodKeeper.git
+```
+
+Entre na pasta
+
+```bash
+cd FoodKeeper
+```
+
+---
+
+## Backend
+
+Entre na API
+
+```bash
 cd FoodKeeper.Api
+```
+
+Restaure os pacotes
+
+```bash
 dotnet restore
+```
+
+Compile
+
+```bash
 dotnet build
+```
+
+Configure a conexão com o SQL Server no arquivo:
+
+```
+appsettings.json
+```
+
+Execute
+
+```bash
 dotnet run
-Crie a base de dados no SQL Server e configure o appsettings.json.
+```
 
-2. Frontend (React + Vite)
+A API ficará disponível juntamente com a documentação Swagger.
 
-Copiar código
+---
+
+## Frontend
+
+Entre na pasta
+
+```bash
 cd foodkeeper-web
+```
+
+Instale as dependências
+
+```bash
 npm install
+```
+
+Execute
+
+```bash
 npm run dev
-📌 Status do Projeto
-✔️ Em desenvolvimento (versão inicial pronta)
-🚀 Planejada futura expansão com relatórios e dashboard
+```
 
-📄 Licença
-MIT License © 2025 — Este projeto é open-source.
+---
 
-👩‍💻 Autora
-Ester da Costa Batista
-📍 Aracaju - SE, Brasil
-📧 ester.retse30@gmail.com
-🔗 LinkedIn: https://www.linkedin.com/in/ester-da-costa-batista-929500295
+# 📸 Screenshots
+
+Adicione imagens da aplicação, por exemplo:
+
+```text
+Home
+
+Produtos
+
+Categorias
+
+Cadastro
+
+Estoque Baixo
+
+Produtos Vencidos
+```
+
+---
+
+# 📚 Objetivos do Projeto
+
+Este projeto foi desenvolvido para praticar:
+
+- Desenvolvimento Full Stack
+- ASP.NET Core Web API
+- React
+- Entity Framework Core
+- SQL Server
+- Consumo de APIs REST
+- CRUD completo
+- Organização em camadas
+- Integração entre frontend e backend
+
+---
+
+# 🔮 Melhorias Futuras
+
+- Autenticação completa com JWT
+- Dashboard administrativo
+- Relatórios em PDF
+- Exportação para Excel
+- Upload de imagens dos produtos
+- Docker
+- Deploy em nuvem
+- Testes automatizados
+
+---
+
+# 👩‍💻 Desenvolvedora
+
+**Ester da Costa Batista**
+
+Desenvolvedora Full Stack
+
+### Tecnologias
+
+- C#
+- .NET
+- ASP.NET Core
+- React
+- SQL Server
+- Entity Framework Core
+- JavaScript
+- HTML
+- CSS
+
+GitHub:
+
+https://github.com/Rester-fullstack
+
+LinkedIn:
+
+https://www.linkedin.com/in/ester-da-costa-batista-929500295
+
+---
+
+# 📄 Licença
+
+Projeto desenvolvido para fins de estudo e portfólio.
